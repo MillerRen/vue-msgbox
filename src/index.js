@@ -185,6 +185,9 @@ MessageBox.prompt = function(message, title, options) {
 };
 
 MessageBox.close = function() {
+  if (!instance) {
+    return;
+  }
   instance.visible = false;
   msgQueue = [];
   currentMsg = null;
